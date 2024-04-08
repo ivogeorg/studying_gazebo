@@ -11,7 +11,13 @@ Exercises with Gazebo worlds, models, etc.
    4. `rosservice call /gazebo/upause_physics` on the command line. _The physics can be paused before spawning the object._
    5. To see available services, `rosservice list` on the command line.
 
-   ![Box over Mount St.Helens](assets/box-over-mt-saint-helens.png)  
+   ![Box over Mount St.Helens](assets/box-over-mt-saint-helens.png)
+
+### Polygon World with Obstacles
+
+Gazebo is quite a retarded simulator, and the documentation is seriously lacking. It takes a lot of empirical knowledge to gain good command of it, which is a serious waste of human life-hours. Anyway...
+
+![Polygon world with obstacles](assets/polygon-with-ostacles.png)  
 
 ### References
 
