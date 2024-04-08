@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <world name="default">
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- A reference barrier -->
+    <!-- <include>
+        <static>true</static>
+        <uri>model://jersey_barrier</uri>
+    </include> -->
+
+    <!-- Automatic population of robot polygon barriers -->
+    <population name="barriers_population_1">
+      <model name="barrier-negative-y">
+        <include>
+          <static>false</static>
+          <uri>model://jersey_barrier</uri>
+          <!-- barrier dims: 4 0.8 1.12 -->
+          <!-- orientation: long side along x -->
+        </include>
+      </model>
+      <pose>2 -20 0.3 0 0 0</pose>
+      <box>
+        <size>40 20 0.01</size>
+      </box>
+      <model_count>10</model_count>
+      <distribution>
+        <type>linear-x</type>
+      </distribution>
+    </population>
+
+    <population name="barriers_population_2">
+      <model name="barrier-positive-y">
+        <include>
+          <static>false</static>
+          <uri>model://jersey_barrier</uri>
+          <!-- barrier dims: 4 0.8 1.12 -->
+          <!-- orientation: long side along x -->
+        </include>
+      </model>
+      <pose>2 20 0.3 0 0 0</pose>
+      <box>
+        <size>40 20 0.01</size>
+      </box>
+      <model_count>10</model_count>
+      <distribution>
+        <type>linear-x</type>
+      </distribution>
+    </population>
+
+    <population name="barriers_population_3">
+      <model name="barrier-negative-x">
+        <include>
+          <static>false</static>
+          <uri>model://jersey_barrier</uri>
+          <pose>0 0 0 0 0 -1.5708</pose>
+          <!-- barrier dims: 4 0.8 1.12 -->
+          <!-- orientation: long side along x -->
+        </include>
+      </model>
+      <pose>-20.8 3 0 0.3 0 0 0</pose>
+      <box>
+        <size>40 43 0.01</size>
+      </box>
+      <model_count>10</model_count>
+      <distribution>
+        <type>linear-y</type>
+      </distribution>
+    </population>
+
+    <population name="barriers_population_4">
+      <model name="barrier-positive-x">
+        <include>
+          <static>false</static>
+          <uri>model://jersey_barrier</uri>
+          <pose>0 0 0 0 0 1.5708</pose>
+          <!-- barrier dims: 4 0.8 1.12 -->
+          <!-- orientation: long side along x -->
+        </include>
+      </model>
+      <pose>20.8 2 0.3 0 0 0</pose>
+      <box>
+        <size>20 40 0.01</size>
+      </box>
+      <model_count>10</model_count>
+      <distribution>
+        <type>linear-y</type>
+      </distribution>
+    </population>
+
+    <!-- Automatic population of polygon obstacles -->
+    <population name="obstacle_population">
+      <model name="Construction Barrel">
+        <include>
+          <static>false</static>
+          <uri>model://construction_barrel</uri>
+        </include>
+      </model>
+      <pose>0 0 0 0 0 0</pose>
+      <box>
+        <size>40 40 0.01</size>
+      </box>
+      <model_count>60</model_count>
+      <distribution>
+        <type>random</type>
+      </distribution>
+    </population>
+
+  </world>
+</sdf>
